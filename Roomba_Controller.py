@@ -2,18 +2,17 @@
 import serial
 import time
 
-def sendCommandASCII(self, command):
-    cmd = ""
-    for v in command.split():
-        cmd += chr(int(v))
+connection = None
 
-    self.sendCommandRaw(cmd)
+def onConnect(serial_port):
+    global connection
+    connection = serial.Serial(serial_port, baudrate=115200, timeout=1)
 
-def sendCommandRaw(self, command):
+def sendCommandRaw(command):
     connection.write(command)
                 
 if __name__ == "__main__":
-	connection = serial.Serial('/dev/tty.usbserial-DA017LBH', baudrate=115200, timeout=1)
-	connection.write(bytes([143]))
-	connection.write(bytes([135]))
-
+    connection = serial.Serial('/dev/tty.usbserial-DA017LBH', baudrate=115200, timeout=1)
+    connection.write(bytes([143]))
+    connection.write(bytes([135]))
+    
