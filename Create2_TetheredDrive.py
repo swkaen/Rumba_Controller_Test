@@ -53,7 +53,7 @@ connection = None
 TEXTWIDTH = 40 # window width, in characters
 TEXTHEIGHT = 16 # window height, in lines
 
-VELOCITYCHANGE = 200
+VELOCITYCHANGE = 300
 ROTATIONCHANGE = 300
 
 helpText = """\
@@ -181,7 +181,7 @@ class TetheredDriveApp(Tk):
             elif k == 'D': # Dock
                 self.sendCommandASCII('143')
             elif k == 'SPACE': # Beep
-                self.sendCommandASCII('140 3 1 64 16 141 3')
+                self.sendCommandASCII('140 3 1 93 16 141 3')
             elif k == 'R': # Reset
                 self.sendCommandASCII('7')
             elif k == 'UP':
