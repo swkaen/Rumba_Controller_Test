@@ -39,7 +39,7 @@ def callBackKey(event):
     sendCommandRaw(cmd)
 
 if __name__ == "__main__":
-    ws = create_connection("ws://133.2.37.129:52020/websocket")
+    ws = create_connection("")
     connection = serial.Serial('/dev/tty.usbserial-DA017LBH', baudrate=115200, timeout=1)
     while True:
         #print("-"*10 + 'choose command'+ "-"*10)
